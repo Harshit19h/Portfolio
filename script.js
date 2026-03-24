@@ -319,21 +319,4 @@ if (openBtn && modal && closeBtn) {
     });
 }
 
-// ====== CONTACT FORM ======
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = contactForm.querySelector('button');
-        const original = btn.innerHTML;
 
-        btn.innerHTML = 'Sent Successfully! <i class="fa-solid fa-check"></i>';
-        btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-        contactForm.reset();
-
-        setTimeout(() => {
-            btn.innerHTML = original;
-            btn.style.background = '';
-        }, 3000);
-    });
-}
