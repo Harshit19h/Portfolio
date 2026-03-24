@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Garg | Data & AI Portfolio</title>
+    <meta name="description"
+        content="Harshit Garg - Data Science Specialist & B.Tech CS Student at LPU. Portfolio showcasing ML, AI, and full-stack projects.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-text">HG</div>
+            <div class="loader-bar">
+                <div class="loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo">
+            <span class="logo-bracket">&lt;</span>HG<span class="logo-bracket">/&gt;</span>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" data-text="About">About</a>
+            <a href="#skills" data-text="Skills">Skills</a>
+            <a href="#projects" data-text="Projects">Projects</a>
+            <a href="#experience" data-text="Experience">Experience</a>
+            <a href="#certifications" data-text="Certs">Certs</a>
+            <a href="#more" data-text="More">More</a>
+            <a href="#contact" data-text="Contact">Contact</a>
+        </div>
+        <div class="burger" id="burger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-grid">
+            <div class="hero-text" data-reveal="left">
+                <div class="status-badge">
+                    <span class="status-dot"></span> Available for Opportunities
+                </div>
+                <h1 class="glitch-title" data-text="Harshit Garg">Harshit Garg</h1>
+                <div class="typing-wrapper">
+                    <span class="typing-prefix">I build </span>
+                    <span class="typed-text" id="typed"></span>
+                    <span class="typing-cursor">|</span>
+                </div>
+                <p class="hero-desc">
+                    B.Tech Computer Science student at LPU specializing in Data Science, Machine Learning,
+                    and Generative AI. Merging technical precision with strategic leadership to build impactful
+                    solutions.
+                </p>
+                <div class="hero-cta">
+                    <a href="Generalised CV.pdf" download class="btn btn-glow">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                    <button class="btn btn-outline" id="open-cv">
+                        <i class="fa-solid fa-eye"></i> View CV
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="7">0</span>
+                        <span class="stat-label">CGPA</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual" data-reveal="right">
+                <div class="profile-container">
+                    <div class="profile-ring"></div>
+                    <div class="profile-ring ring-2"></div>
+                    <img src="Harshit.jpeg" alt="Harshit Garg" class="profile-img">
+                    <div class="floating-badge badge-1"><i class="fa-brands fa-python"></i></div>
+                    <div class="floating-badge badge-2"><i class="fa-solid fa-brain"></i></div>
+                    <div class="floating-badge badge-3"><i class="fa-solid fa-database"></i></div>
+                </div>
+            </div>
+        </div>
+        <a href="#about" class="scroll-cta">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </a>
+    </section>
+
+    <!-- ===================== CV MODAL ===================== -->
+    <div class="modal-overlay" id="cv-modal">
+        <div class="modal-box">
+            <div class="modal-top">
+                <h3><i class="fa-solid fa-file-lines"></i> Curriculum Vitae</h3>
+                <div class="modal-actions">
+                    <a href="Generalised CV.pdf" download class="modal-download-btn">
+                        <i class="fa-solid fa-download"></i> Download
+                    </a>
+                    <button class="modal-close" id="close-modal"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+            <div class="modal-body" id="modal-pdf-container">
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// ABOUT ME</div>
+            <h2 class="section-title" data-reveal="up">Get to Know <span class="highlight">Me</span></h2>
+            <div class="about-grid">
+                <div class="about-text" data-reveal="left">
+                    <p>
+                        I am a forward-thinking technologist pursuing a <strong>B.Tech in Computer Science &
+                            Engineering</strong>
+                        at Lovely Professional University. My focus lies at the intersection of Machine Learning
+                        pipelines,
+                        Generative AI, and cloud-native architectures. I don't just write code — I architect intelligent
+                        systems
+                        that deliver measurable business impact.
+                    </p>
+                    <p>
+                        Beyond code, I led business development at AIESEC, managed cross-functional teams, and launched
+                        data-driven strategies. I believe that the best technologists are also the best communicators.
+                    </p>
+                </div>
+                <div class="education-cards" data-reveal="right">
+                    <div class="edu-card">
+                        <div class="edu-year">2023 — Present</div>
+                        <h4>B.Tech Computer Science</h4>
+                        <span>Lovely Professional University • CGPA: 7.00</span>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-year">2021 — 2022</div>
+                        <h4>Intermediate (XII)</h4>
+                        <span>Silver Bells Public School • 85.6%</span>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-year">2019 — 2020</div>
+                        <h4>Matriculation (X)</h4>
+                        <span>Bright Home Public School • 91.2%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section id="skills" class="section section-dark">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// TECH STACK</div>
+            <h2 class="section-title" data-reveal="up">Skills & <span class="highlight">Technologies</span></h2>
+            <div class="skills-showcase" data-reveal="up">
+                <!-- Skill Category 1 -->
+                <div class="skill-panel">
+                    <div class="skill-panel-header">
+                        <div class="panel-icon"><i class="fa-solid fa-robot"></i></div>
+                        <h3>AI & Data Science</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Machine Learning</span><span>85%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Generative AI & LLMs</span><span>80%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Power BI & DAX</span><span>75%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Data Pipelines</span><span>70%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Category 2 -->
+                <div class="skill-panel">
+                    <div class="skill-panel-header">
+                        <div class="panel-icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Programming</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Python</span><span>90%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Java (OOP)</span><span>80%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>SQL / MySQL</span><span>85%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>C / C++</span><span>65%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="65"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Category 3 -->
+                <div class="skill-panel">
+                    <div class="skill-panel-header">
+                        <div class="panel-icon"><i class="fa-solid fa-server"></i></div>
+                        <h3>Web & Tools</h3>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>FastAPI / REST</span><span>75%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>HTML / CSS / JS</span><span>80%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Git & GitHub</span><span>85%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="bar-info"><span>Linux / CLI</span><span>70%</span></div>
+                            <div class="bar-track">
+                                <div class="bar-fill" data-width="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// PORTFOLIO</div>
+            <h2 class="section-title" data-reveal="up">Featured <span class="highlight">Projects</span></h2>
+            <div class="projects-masonry">
+                <div class="project-card" data-reveal="up">
+                    <div class="project-number">01</div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-tag-pill">Machine Learning</span>
+                            <div class="project-links">
+                                <a href="https://github.com/Harshit19h" target="_blank" title="GitHub"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>Customer Churn AI</h3>
+                        <p>An intelligent Scikit-learn system generating revenue risk buckets. Integrated with FastAPI
+                            and MySQL for real-time business intelligence and predictive analytics.</p>
+                        <div class="tech-stack">
+                            <span>Python</span><span>Scikit-learn</span><span>FastAPI</span><span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-reveal="up" style="transition-delay: 150ms;">
+                    <div class="project-number">02</div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-tag-pill">Data Visualization</span>
+                            <div class="project-links">
+                                <a href="https://github.com/Harshit19h" target="_blank" title="GitHub"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>Global Cancer Trends Dashboard</h3>
+                        <p>Analyzed 50,000+ medical records to visualize treatment costs and patient segmentation
+                            using advanced DAX methodologies and interactive Power BI dashboards.</p>
+                        <div class="tech-stack">
+                            <span>Power BI</span><span>DAX</span><span>Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-reveal="up" style="transition-delay: 300ms;">
+                    <div class="project-number">03</div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-tag-pill">Java / OOP</span>
+                            <div class="project-links">
+                                <a href="https://github.com/Harshit19h" target="_blank" title="GitHub"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </div>
+                        </div>
+                        <h3>Wellness Stimulator</h3>
+                        <p>A modular conversational Java assistant built with OOP design patterns.
+                            Enhanced user interaction by 60% with randomized wellness response algorithms.</p>
+                        <div class="tech-stack">
+                            <span>Java</span><span>Algorithms</span><span>OOP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section section-dark">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// CAREER</div>
+            <h2 class="section-title" data-reveal="up">Work <span class="highlight">Experience</span></h2>
+            <div class="exp-timeline" data-reveal="up">
+                <div class="exp-card">
+                    <div class="exp-left">
+                        <div class="exp-date-badge">AUG 2024 — JUL 2025</div>
+                    </div>
+                    <div class="exp-line">
+                        <div class="exp-dot-outer">
+                            <div class="exp-dot-inner"></div>
+                        </div>
+                    </div>
+                    <div class="exp-right">
+                        <h3>Team Leader, BD & External Relations</h3>
+                        <h4>AIESEC in Jalandhar</h4>
+                        <p>
+                            Directed business development and managed B2B partnerships. Served as
+                            <strong>Core Committee Vice President for Delegate Affairs</strong>
+                            at the national conference. Led cross-functional outreach campaigns.
+                        </p>
+                        <a href="[Harshit Garg] Letter of Experience - AIESEC India.pdf" target="_blank"
+                            class="exp-link">
+                            <i class="fa-solid fa-file-pdf"></i> View Experience Letter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CERTIFICATIONS ===================== -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// CREDENTIALS</div>
+            <h2 class="section-title" data-reveal="up">Certifications <span class="highlight">& Courses</span></h2>
+            <div class="cert-scroll" data-reveal="up">
+                <div class="cert-item">
+                    <div class="cert-icon-wrap"><i class="fa-solid fa-award"></i></div>
+                    <h3>Data Science Job-Ready</h3>
+                    <span class="cert-meta">CodeWithHarry • Sept 2025</span>
+                    <a href="The_Ultimate_Job_Ready_Data_Science_Course_Certificate.pdf" target="_blank">View <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon-wrap"><i class="fa-solid fa-award"></i></div>
+                    <h3>ChatGPT-4 Prompt Engineering</h3>
+                    <span class="cert-meta">Infosys Springboard • Aug 2025</span>
+                    <a href="ChatGPT-4 Prompt Engineering ChatGPT, Generative AI & LLM.pdf" target="_blank">View <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon-wrap"><i class="fa-solid fa-award"></i></div>
+                    <h3>Computational Theory</h3>
+                    <span class="cert-meta">Infosys Springboard • Aug 2025</span>
+                    <a href="Computational Theory Language Principle & Finite Automata Theory.pdf" target="_blank">View
+                        <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon-wrap"><i class="fa-solid fa-award"></i></div>
+                    <h3>Generative AI No-Code</h3>
+                    <span class="cert-meta">Infosys Springboard • Aug 2025</span>
+                    <a href="Build Generative AI Apps and Solutions with No-Code Tools.pdf" target="_blank">View <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== MORE SECTIONS ===================== -->
+    <section id="more" class="section section-dark">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// BEYOND THE CODE</div>
+            <h2 class="section-title" data-reveal="up">Professional <span class="highlight">Endeavors</span></h2>
+            <div class="endeavor-grid">
+                <div class="endeavor-card" data-reveal="up">
+                    <div class="endeavor-num">01</div>
+                    <div class="endeavor-icon"><i class="fa-solid fa-star"></i></div>
+                    <h3>Core Committee Vice President</h3>
+                    <p>Served as Core Committee Vice President for Delegate Affairs at the AIESEC June National Conference.
+                        Managed delegate logistics, stakeholder coordination, and delivered a seamless conference experience for 200+ attendees.</p>
+                </div>
+                <div class="endeavor-card" data-reveal="up" style="transition-delay: 100ms;">
+                    <div class="endeavor-num">02</div>
+                    <div class="endeavor-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Competitive Programming & Hackathons</h3>
+                    <p>Actively solving LeetCode algorithms and participating in college-level coding
+                        sprint hackathons. Focused on optimizing time complexities and competitive problem-solving.</p>
+                </div>
+                <div class="endeavor-card" data-reveal="up" style="transition-delay: 200ms;">
+                    <div class="endeavor-num">03</div>
+                    <div class="endeavor-icon"><i class="fa-brands fa-osi"></i></div>
+                    <h3>Open Source Contributions</h3>
+                    <p>Contributing to public AI repositories — reviewing Python scripts, optimizing library usage,
+                        and documenting ML setup pipelines for the open-source community.</p>
+                </div>
+                <div class="endeavor-card" data-reveal="up" style="transition-delay: 300ms;">
+                    <div class="endeavor-num">04</div>
+                    <div class="endeavor-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Blog & Technical Writing</h3>
+                    <p>Drafting instructional content on implementing Generative AI in business.
+                        Articles pending publication on Medium and Dev.to covering AI best practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-tag" data-reveal="up">// SAY HELLO</div>
+            <h2 class="section-title" data-reveal="up">Let's <span class="highlight">Connect</span></h2>
+            <div class="contact-grid">
+                <div class="contact-left" data-reveal="left">
+                    <p class="contact-intro">Seeking opportunities to apply data intelligence to real-world impact.
+                        Whether it's a project, opportunity, or just a hello — my inbox is always open.</p>
+                    <div class="contact-links">
+                        <a href="mailto:harshitgarg1903@gmail.com" class="contact-link-item">
+                            <div class="cl-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div><strong>Email</strong><span>harshitgarg1903@gmail.com</span></div>
+                        </a>
+                        <a href="tel:+919389047818" class="contact-link-item">
+                            <div class="cl-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div><strong>Phone</strong><span>+91 9389047818</span></div>
+                        </a>
+                        <a href="https://linkedin.com/in/harshit190/" target="_blank" class="contact-link-item">
+                            <div class="cl-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div><strong>LinkedIn</strong><span>linkedin.com/in/harshit190</span></div>
+                        </a>
+                        <a href="https://github.com/Harshit19h" target="_blank" class="contact-link-item">
+                            <div class="cl-icon"><i class="fa-brands fa-github"></i></div>
+                            <div><strong>GitHub</strong><span>github.com/Harshit19h</span></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-right" data-reveal="right">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-glow w-full">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-logo">
+                <span class="logo-bracket">&lt;</span>HG<span class="logo-bracket">/&gt;</span>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/Harshit19h" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/harshit190/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:harshitgarg1903@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Harshit Garg. Crafted with precision & passion.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
