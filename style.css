@@ -772,6 +772,129 @@ footer {
 }
 footer p { color: var(--white-muted); font-size: 0.8rem; }
 
+/* ====== ABOUT CONTENT ====== */
+.about-content {
+    max-width: 800px; margin: 0 auto; text-align: center;
+}
+.about-content p {
+    color: var(--white-soft); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.9;
+}
+.about-content strong { color: var(--white); }
+
+/* ====== EDUCATION TIMELINE ====== */
+.edu-timeline {
+    max-width: 800px; margin: 0 auto; position: relative;
+    padding-left: 40px;
+}
+.edu-timeline::before {
+    content: ''; position: absolute; left: 18px; top: 0;
+    width: 2px; height: 100%;
+    background: linear-gradient(180deg, var(--accent), var(--purple), var(--accent));
+    opacity: 0.4;
+}
+.edu-timeline-item {
+    display: flex; gap: 28px; margin-bottom: 40px; position: relative;
+}
+.edu-timeline-item:last-child { margin-bottom: 0; }
+.edu-timeline-icon {
+    width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
+    background: var(--surface); border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem; color: var(--accent); z-index: 2;
+    position: relative; left: -40px; margin-right: -40px;
+    box-shadow: 0 0 20px var(--accent-glow);
+    transition: all 0.4s var(--ease);
+}
+.edu-timeline-item:hover .edu-timeline-icon {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    color: var(--bg); border-color: transparent;
+    box-shadow: 0 0 30px var(--accent-glow-strong);
+    transform: scale(1.1);
+}
+.edu-timeline-content {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: var(--radius); padding: 30px 35px; flex: 1;
+    transition: all 0.4s var(--ease); position: relative; overflow: hidden;
+}
+.edu-timeline-content::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--purple));
+    opacity: 0; transition: 0.4s;
+}
+.edu-timeline-item:hover .edu-timeline-content {
+    border-color: var(--glass-border-hover);
+    transform: translateX(6px);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.08);
+}
+.edu-timeline-item:hover .edu-timeline-content::before { opacity: 1; }
+.edu-timeline-date {
+    font-family: var(--font-mono); font-size: 0.78rem;
+    color: var(--accent); margin-bottom: 8px; font-weight: 500;
+    letter-spacing: 1px;
+    display: inline-block; padding: 4px 12px;
+    background: var(--accent-soft); border-radius: 50px;
+    border: 1px solid rgba(6, 182, 212, 0.15);
+}
+.edu-timeline-content h3 {
+    font-family: var(--font); font-size: 1.35rem; font-weight: 700;
+    margin-bottom: 4px;
+}
+.edu-timeline-content h4 {
+    color: var(--white-soft); font-weight: 400; font-size: 1rem;
+    margin-bottom: 10px; font-family: var(--font);
+}
+.edu-grade {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--accent-2); font-weight: 600; font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+.edu-grade i { font-size: 0.85rem; }
+.edu-timeline-content p {
+    color: var(--white-muted); font-size: 0.92rem; line-height: 1.7;
+    margin: 0;
+}
+
+/* ====== CV SHOWCASE ====== */
+.cv-showcase {
+    display: flex; justify-content: center;
+}
+.cv-card {
+    text-align: center; padding: 60px 50px;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    border-radius: var(--radius); max-width: 600px; width: 100%;
+    transition: all 0.4s var(--ease); position: relative; overflow: hidden;
+}
+.cv-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 0%, var(--accent-glow), transparent 70%);
+    opacity: 0; transition: 0.4s;
+}
+.cv-card:hover {
+    border-color: var(--glass-border-hover);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 50px rgba(6, 182, 212, 0.1);
+}
+.cv-card:hover::before { opacity: 1; }
+.cv-icon {
+    font-size: 4rem; color: var(--accent); margin-bottom: 24px;
+    position: relative;
+    filter: drop-shadow(0 0 20px var(--accent-glow));
+}
+.cv-card h3 {
+    font-family: var(--font); font-size: 1.6rem; font-weight: 700;
+    margin-bottom: 12px; position: relative;
+}
+.cv-card > p {
+    color: var(--white-muted); font-size: 1rem; line-height: 1.8;
+    margin-bottom: 30px; max-width: 450px; margin-left: auto; margin-right: auto;
+    position: relative;
+}
+.cv-actions {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    position: relative;
+}
+
 /* ====== RESPONSIVE ====== */
 @media (max-width: 1024px) {
     .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }

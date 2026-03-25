@@ -319,4 +319,10 @@ if (openBtn && modal && closeBtn) {
     });
 }
 
+// CV Section "View CV" button
+const openCvSection = document.getElementById('open-cv-section');
+if (openCvSection) {
+    openCvSection.addEventListener('click', openCVModal);
+}
+
 
