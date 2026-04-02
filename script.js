@@ -292,7 +292,7 @@ function openCVModal() {
 
             // Create iframe with exact pixel dimensions
             const iframe = document.createElement('iframe');
-            iframe.src = 'Generalised CV.pdf#toolbar=1&view=FitH';
+            iframe.src = 'New Resume.pdf#toolbar=1&view=FitH';
             iframe.width = w;
             iframe.height = h;
             iframe.style.border = 'none';
